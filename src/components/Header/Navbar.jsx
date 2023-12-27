@@ -1,10 +1,12 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { selectIsLoggedIn } from '../../redux/auth/selectors'
+import { logoutThunk } from '../../redux/auth/operations'
 
 const Navbar = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn)
+  const dispatch = useDispatch()
   return (
     <div className='text-white font-bold flex gap-4'>
       <NavLink to='/'>Home</NavLink>
@@ -15,7 +17,8 @@ const Navbar = () => {
       </>)}
       {isLoggedIn && (
         <>
-          |<button>Exit</button>
+          |<button onClick={() => dispatch(logoutThunk())
+          }>Exit</button>
         </>
       )}
 
