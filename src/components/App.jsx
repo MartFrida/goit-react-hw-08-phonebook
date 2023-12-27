@@ -7,6 +7,8 @@ import Login from "../pages/Login/Login";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { refreshThunk } from "../redux/auth/operations";
+import PrivateRoute from "routesConfig/PrivateRoute";
+import { PublicRoute } from "routesConfig/PublicRoute";
 
 
 export const App = () => {
@@ -19,9 +21,21 @@ export const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<h1>Home</h1>} />
-        <Route path="/contacts" element={<Phonebook />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/contacts" element={
+          <PrivateRoute>
+            <Phonebook />
+          </PrivateRoute>
+        } />
+        <Route path="/register" element={
+          <PublicRoute>
+            <Register />
+          </PublicRoute>
+        } />
+        <Route path="/login" element={
+          <PublicRoute>
+            <Login />
+          </PublicRoute>
+        } />
         <Route path="*" element={<Page404 />} />
       </Routes>
     </>
