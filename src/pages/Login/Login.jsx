@@ -16,14 +16,15 @@ const Login = () => {
   const dispatch = useDispatch()
   const submit = (data) => {
     console.log(data)
-    dispatch(loginThunk(data)).unwrap().then(
-      (res) => {
+    dispatch(loginThunk(data))
+      .unwrap()
+      .then(res => {
         navigate('/contacts')
-        toast.success(`Welcome ${res.user.name}`)
+        // toast.success(`Welcome ${res.user.name}`)
       }
-    ).catch(() => {
-      toast.error('Thomething wrong')
-    })
+      ).catch(() => {
+        toast.error('Something wrong')
+      })
   }
   return (
     <div className='flex justify-center items-center min-h-[80vh]' >

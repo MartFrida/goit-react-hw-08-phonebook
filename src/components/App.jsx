@@ -4,11 +4,13 @@ import Header from "./Header/Header";
 import Page404 from "../pages/Page404/Page404";
 import { Register } from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { refreshThunk } from "../redux/auth/operations";
-import PrivateRoute from "routesConfig/PrivateRoute";
-import { PublicRoute } from "routesConfig/PublicRoute";
+import PrivateRoute from "../routesConfig/PrivateRoute";
+import { PublicRoute } from "../routesConfig/PublicRoute";
+import { selectIsRefresh } from "../redux/auth/selectors";
+import { Loader } from "./Loader/Loader";
 
 
 export const App = () => {
@@ -16,7 +18,10 @@ export const App = () => {
   useEffect(() => {
     dispatch(refreshThunk)
   }, [dispatch])
-  return (
+
+  const isRefresh = useSelector(selectIsRefresh)
+
+  return isRefresh ? (<Loader />) : (
     <>
       <Header />
       <Routes>
