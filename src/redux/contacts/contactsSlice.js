@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit"
 import { addContactThunk, deleteContactThunk, fetchContactsThunk } from "../../redux/operations"
+import { logoutThunk } from "../../redux/auth/operations"
 
 const initialState = {
   contacts: [],
@@ -22,6 +23,7 @@ const contactsSlice = createSlice({
       state.contacts = payload
       state.loading = false
     })
+      .addCase(logoutThunk.fulfilled, state => state.contacts = [])
       .addCase(deleteContactThunk.fulfilled, (state, { payload }) => {
         state.contacts = state.contacts.filter(item => item.id !== payload.id)
       })

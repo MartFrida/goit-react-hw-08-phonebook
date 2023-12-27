@@ -24,13 +24,13 @@ const slice = createSlice({
         state.isLoggedIn = true
         state.isRefresh = false
       })
-      .addCase(refreshThunk.pending, (state) => {
+      .addCase(refreshThunk.pending, state => {
         state.isRefresh = true
       })
       .addCase(refreshThunk.rejected, state => {
         state.isRefresh = false
       })
-      .addCase(logoutThunk.fulfilled, (state, { payload }) => {
+      .addCase(logoutThunk.fulfilled, state => {
         state.user = initialState.user
         state.isLoggedIn = false
         state.token = ''
