@@ -18,7 +18,7 @@ const Login = () => {
     console.log(data)
     dispatch(loginThunk(data)).unwrap().then(
       (res) => {
-        navigate('/phonebook')
+        navigate('/contacts')
         toast.success(`Welcome ${res.user.name}`)
       }
     ).catch(() => {

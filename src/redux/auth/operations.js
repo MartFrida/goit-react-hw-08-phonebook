@@ -31,3 +31,21 @@ export const logoutThunk = createAsyncThunk('auth/logout', async (_, thunkApi) =
     return thunkApi.rejectWithValue(error.message)
   }
 })
+
+export const refreshThunk = createAsyncThunk('auth/refresh', async (_, thunkApi) => {
+  const savedToken = thunkApi.getState().auth.token
+  console.log(savedToken)
+  if (savedToken) {
+    setToken(savedToken)
+  } else {
+    return thunkApi.rejectWithValue('Token is not exist')
+  }
+
+  try {
+    const response = await api.get('users/current')
+    console.log(response.data)
+    return response.data
+  } catch (error) {
+    return thunkApi.rejectWithValue(error.message)
+  }
+})

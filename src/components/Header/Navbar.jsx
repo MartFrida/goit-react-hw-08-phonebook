@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <div className='text-white font-bold flex gap-4'>
       <NavLink to='/'>Home</NavLink>
-      <NavLink to='/phonebook'>Phonebook</NavLink>
+      <NavLink to='/contacts'>Phonebook</NavLink>
       {!isLoggedIn && (<>
         <NavLink to='/login'>Login</NavLink>
         <NavLink to='/register'>SignUp</NavLink>
