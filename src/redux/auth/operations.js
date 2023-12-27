@@ -5,7 +5,7 @@ export const registerThunk = createAsyncThunk('auth/register', async (credential
   try {
     const response = await api.post('users/signup', credentials)
     setToken(response.data.token)
-    console.log(response)
+    // console.log(response)
     return response.data
   } catch (error) {
     return thunkApi.rejectWithValue(error.message)
@@ -15,7 +15,7 @@ export const registerThunk = createAsyncThunk('auth/register', async (credential
 export const loginThunk = createAsyncThunk('auth/login', async (credentials, thunkApi) => {
   try {
     const response = await api.post('users/login', credentials)
-    console.log(response)
+    // console.log(response)
     setToken(response.data.token)
     return response.data
   } catch (error) {
@@ -34,7 +34,7 @@ export const logoutThunk = createAsyncThunk('auth/logout', async (_, thunkApi) =
 
 export const refreshThunk = createAsyncThunk('auth/refresh', async (_, thunkApi) => {
   const savedToken = thunkApi.getState().auth.token
-  console.log(savedToken)
+  // console.log(savedToken)
   if (savedToken) {
     setToken(savedToken)
   } else {
@@ -43,7 +43,7 @@ export const refreshThunk = createAsyncThunk('auth/refresh', async (_, thunkApi)
 
   try {
     const response = await api.get('users/current')
-    console.log(response.data)
+    // console.log(response.data)
     return response.data
   } catch (error) {
     return thunkApi.rejectWithValue(error.message)

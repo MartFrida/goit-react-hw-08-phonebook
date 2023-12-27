@@ -15,7 +15,7 @@ const Login = () => {
   })
   const dispatch = useDispatch()
   const submit = (data) => {
-    console.log(data)
+    // console.log(data)
     dispatch(loginThunk(data))
       .unwrap()
       .then(res => {

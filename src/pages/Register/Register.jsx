@@ -7,7 +7,7 @@ export const Register = () => {
   const { register, handleSubmit } = useForm()
   const dispatch = useDispatch()
   const submit = (data) => {
-    console.log(data)
+    // console.log(data)
     dispatch(registerThunk(data))
   }
   return (
