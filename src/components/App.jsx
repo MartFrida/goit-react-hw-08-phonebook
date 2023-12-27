@@ -3,6 +3,7 @@ import { Phonebook } from "../pages/Phonebook/Phonebook";
 import Header from "./Header/Header";
 import Page404 from "../pages/Page404/Page404";
 import { Register } from "pages/Register/Register";
+import Login from "pages/Login/Login";
 
 
 export const App = () => {
@@ -13,6 +14,7 @@ export const App = () => {
         <Route path="/" element={<h1>Home</h1>} />
         <Route path="/phonebook" element={<Phonebook />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
         <Route path="*" element={<Page404 />} />
       </Routes>
 
