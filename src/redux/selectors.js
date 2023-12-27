@@ -6,7 +6,6 @@ export const selectLoading = state => state.contactsData.loading
 export const selectError = state => state.contactsData.error
 
 export const selectFilteredData = createSelector([selectContacts, selectFilter], (contacts, filter) => {
-  console.log('FILTER CONTACTS')
   return contacts.filter(contact => contact.name.toLowerCase().includes(filter.toLowerCase()))
 })
 
