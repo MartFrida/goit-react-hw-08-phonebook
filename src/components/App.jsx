@@ -16,7 +16,7 @@ import { Loader } from "./Loader/Loader";
 export const App = () => {
   const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(refreshThunk)
+    dispatch(refreshThunk())
   }, [dispatch])
 
   const isRefresh = useSelector(selectIsRefresh)
