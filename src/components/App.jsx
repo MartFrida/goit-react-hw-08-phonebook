@@ -11,6 +11,7 @@ import PrivateRoute from "../routesConfig/PrivateRoute";
 import { PublicRoute } from "../routesConfig/PublicRoute";
 import { selectIsRefresh } from "../redux/auth/selectors";
 import { Loader } from "./Loader/Loader";
+import Home from "pages/Home/Home";
 
 
 export const App = () => {
@@ -25,7 +26,7 @@ export const App = () => {
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<h1>Home</h1>} />
+        <Route path="/" element={<Home />} />
         <Route path="/contacts" element={
           <PrivateRoute>
             <Phonebook />
