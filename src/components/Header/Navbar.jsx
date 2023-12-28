@@ -21,7 +21,6 @@ const Navbar = () => {
           }>Exit</button>
         </>
       )}
-
     </div>
   )
 }
