@@ -30,11 +30,12 @@ const slice = createSlice({
       .addCase(refreshThunk.rejected, state => {
         state.isRefresh = false
       })
-      .addCase(logoutThunk.fulfilled, state => {
-        state.user = initialState.user
-        state.isLoggedIn = false
-        state.token = ''
-      })
+      // .addCase(logoutThunk.fulfilled, state => {
+      //   console.log('sdfd')
+      //   // state.user = initialState.user
+      //   // state.isLoggedIn = false
+      //   // state.token = ''
+      // })
       .addCase(registerThunk.fulfilled, (state, { payload }) => {
         state.user = payload.user
         state.token = payload.token

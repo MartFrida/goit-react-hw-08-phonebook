@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux"
-import { selectFilteredData } from "../../redux/selectors"
+import { selectFilteredData } from "../../redux/contacts/selectors"
 
 export const ContactList = ({ onDeleteUser }) => {
   const contacts = useSelector(selectFilteredData)

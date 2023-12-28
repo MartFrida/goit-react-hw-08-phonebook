@@ -1,7 +1,7 @@
 // https://65660ca1eb8bb4b70ef2d6ab.mockapi.io/api/v1/contacts
 // import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { api } from '../configAxios/api';
+import { api } from '../../configAxios/api';
 
 // axios.defaults.baseURL = 'https://65660ca1eb8bb4b70ef2d6ab.mockapi.io/api/v1'
 

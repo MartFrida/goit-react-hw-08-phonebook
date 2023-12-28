@@ -4,8 +4,8 @@ import { ContactList } from 'components/ContactList/ContactList';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilter } from '../../redux/contacts/contactsSlice';
-import { addContactThunk, deleteContactThunk, fetchContactsThunk } from '../../redux/operations';
-import { selectError, selectFilter, selectFilteredData, selectLoading } from '../../redux/selectors';
+import { addContactThunk, deleteContactThunk, fetchContactsThunk } from '../../redux/contacts/operations';
+import { selectError, selectFilter, selectFilteredData, selectLoading } from '../../redux/contacts/selectors';
 
 export const Phonebook = () => {
 
